@@ -1,8 +1,8 @@
 *********************BLUE BANK*********************
 
-
+**************************************
 Requisitos
-
+**************************************
 - Criar duas contas. conta 1 e conta 2
 
 - Vai logar com a conta 1
@@ -22,6 +22,6 @@ AÇÕES
 - Se depositar, vai ser de conta 1 pra conta 2.
 - Sacar e pagar conta, é referente apenas a conta 1
 
-Quando conta 1 deslogar da aplicação, a aplicação.
+*Quando conta 1 deslogar da aplicação, a aplicação.
 
-Cliente 2 tambem acessa a aplicação: Cliente 2 faz as mesmas Operações que cliente 1.
+*Cliente 2 tambem acessa a aplicação: Cliente 2 faz as mesmas Operações que cliente 1.
