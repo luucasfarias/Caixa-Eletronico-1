@@ -5,7 +5,7 @@ import users
 import login
 
 
-def main():
+def principal():
     while True:
         print(f'{" BLUE-BANK ":-^50}')
 
@@ -35,4 +35,4 @@ def main():
             break
 
 
-main()
+principal()

@@ -22,11 +22,11 @@ def listaUsers():
         print("-" * 50)
         print(f'Usuário 1: {user1["nome1"]}')
         print(f'Conta 1: {user1["conta1"]}')
-        print(f'Saldo 1: R${user1["saldo1"]}')
+        print(f'Saldo 1: R$\033[1;32m{user1["saldo1"]}\033[0;0m')
         print("-" * 50)
         print(f'Usuário 2: {user2["nome2"]}')
         print(f'Conta 2: {user2["conta2"]}')
-        print(f'Saldo 2: R${user2["saldo2"]}')
+        print(f'Saldo 2: R$\033[1;32m{user2["saldo2"]}\033[0;0m')
 
     elif user1['nome1'] == '':
         print('\033[31mNão existem usuários cadastrados!\033[m')
@@ -38,4 +38,4 @@ def listaUsers():
         print("-" * 50)
         print(f'Usuário 1: {user1["nome1"]}')
         print(f'Conta 1: {user1["conta1"]}')
-        print(f'Saldo 1: R${user1["saldo1"]}')
+        print(f'Saldo 1: R$\033[1;32m{user1["saldo1"]}\033[0;0m')

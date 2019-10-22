@@ -1,12 +1,13 @@
 import getpass
 import users
 from time import sleep
+n = 0
 
 
 def cadastro():
-    n = 0
+    global n
     while True:
-        ###### NOME #######
+        # NOME
         if n != 2:
             nome = input('Nome: ').strip().title()
 
@@ -18,7 +19,7 @@ def cadastro():
             users.user2['nome2'] = nome
             n += 1
 
-        ######## CONTA #########
+        # CONTA
         while True:
             conta = input('Conta: ( xxxxx ) ').strip()
             if len(conta) != 5:
@@ -35,7 +36,6 @@ def cadastro():
                         continue
                     else:
                         break
-                print("-" * 50)
             else:
                 if users.user1['conta1'] == '':
                     users.user1['conta1'] = conta
@@ -45,22 +45,22 @@ def cadastro():
                     users.user2['conta2'] = conta
                     break
 
-        ####### SENHA #####
+        # SENHA
         senha = getpass.getpass('Informe uma senha: ').strip()
 
-        if senha not in users.user1['senha1']:
+        if users.user1['senha1'] == '':
             print('\033[36mUsuário cadastrado com sucesso!\033[m')
             print("-" * 50)
             users.user1['senha1'] = senha
 
-        elif senha not in users.user2['senha2']:
+        elif users.user2['senha2'] == '':
             print('\033[36mUsuário cadastrado com sucesso!\033[m')
             print("-" * 50)
             users.user2['senha2'] = senha
 
         while True:
-            c = input('Deseja cadastrar mais alguem? [S/N] ').upper().strip()
-            if c not in 'SN':
+            c = input('Deseja cadastrar mais alguem? [S/N] ').upper()
+            if c not in 'SN' or c == '':
                 print('ERRO! ', end='')
                 continue
             else:
@@ -71,7 +71,7 @@ def cadastro():
             sleep(1.4)
             break
 
-        if n == 2:
+        if n == 2 and c == 'S':
             print('\033[31mLIMITE DE DADOS ATINGINDO!\033[m')
             print('Saindo ...')
             sleep(1.4)

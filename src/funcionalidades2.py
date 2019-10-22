@@ -2,7 +2,7 @@ from time import sleep
 import users
 
 
-class Funcionalidades(object):
+class Funcionalidades2(object):
     op = 0
 
     def __init__(self):
@@ -37,19 +37,19 @@ class Funcionalidades(object):
 
         # adicionando a quantia no saldo
         saldo += quant
-        users.user1['saldo1'] += saldo
+        users.user2['saldo2'] += saldo
 
         # frescuras do print
         print('Depositando ...')
         sleep(1.2)
         print(f'Você depositou R$\033[1;32m{quant:.2f}\033[0;0m')
-        print(f"Seu saldo atual é de R$\033[1;32m{users.user1['saldo1']:.2f}\033[0;0m")
+        print(f"Seu saldo atual é de R$\033[1;32m{users.user2['saldo2']:.2f}\033[0;0m")
 
     # SACAR
     def sacar(self):
-        if users.user1['saldo1'] == 0:
+        if users.user2['saldo2'] == 0:
             print('Para fazer o saque é preciso ter saldo na conta!')
-            print(f"Seu saldo atual é de R$\033[1;32m{users.user1['saldo1']:.2f}\033[0;0m")
+            print(f"Seu saldo atual é de R$\033[1;32m{users.user2['saldo2']:.2f}\033[0;0m")
             print(f'-' * 50)
         else:
             # pedindo o valor de saque
@@ -60,16 +60,16 @@ class Funcionalidades(object):
                 valor = float(input('Valor INVÁLIDO! Tente Novamente: R$'))
             print(f'-' * 50)
 
-            if valor > users.user1['saldo1']:
+            if valor > users.user2['saldo2']:
                 print('Não foi possível completar a operação!\nO valor do saque é maior do que seu saldo!')
             else:
                 # removendo o valor do saldo
-                users.user1['saldo1'] -= valor
+                users.user2['saldo2'] -= valor
                 # frescuras do print
                 print('Retirando ...')
                 sleep(1.2)
                 print(f'Você retirou R$\033[1;32m{valor:.2f}\033[0;0m')
-                print(f"Seu saldo atual é de R$\033[1;32m{users.user1['saldo1']:.2f}\033[0;0m")
+                print(f"Seu saldo atual é de R$\033[1;32m{users.user2['saldo2']:.2f}\033[0;0m")
 
     def transferir(self):
         while True:
@@ -80,7 +80,7 @@ class Funcionalidades(object):
                 else:
                     break
 
-            if contaTransferencia == users.user2['conta2']:
+            if contaTransferencia == users.user1['conta1']:
                 sleep(1)
                 print('Adicionando ...')
                 sleep(1.2)
@@ -93,17 +93,17 @@ class Funcionalidades(object):
 
                 print(f'-' * 50)
 
-                if valorTransferencia > users.user1['saldo1']:
+                if valorTransferencia > users.user2['saldo2']:
                     print('Não foi possível completar a operação!\nO valor da tranferência é maior do que seu saldo!')
                 else:
-                    users.user1['saldo1'] -= valorTransferencia
-                    users.user2['saldo2'] += valorTransferencia
+                    users.user2['saldo2'] -= valorTransferencia
+                    users.user1['saldo1'] += valorTransferencia
                     sleep(1)
                     print('Transferindo ...')
                     sleep(1.2)
                     print('Transferencia concluída com sucesso!')
-                    print(f"Você transferiu R$\033[1;32m{valorTransferencia:.2f}\033[0;0m para {users.user2['nome2']}!")
-                    print(f"Seu saldo atual é de R$\033[1;32m{users.user1['saldo1']:.2f}\033[0;0m!")
+                    print(f"Você transferiu R${valorTransferencia:.2f} para {users.user1['nome1']}!")
+                    print(f"Seu saldo atual é de R${users.user2['saldo2']:.2f}!")
                 break
             else:
                 print('Esta conta não está cadastrada!')
@@ -129,13 +129,13 @@ class Funcionalidades(object):
 
         print(f'-' * 50)
 
-        if valorConta > users.user1['saldo1']:
+        if valorConta > users.user2['saldo2']:
             print('Não foi possível completar a operação!\nO valor da conta é maior do que seu saldo!')
         else:
-            users.user1['saldo1'] -= valorConta
+            users.user2['saldo2'] -= valorConta
             sleep(1)
             print('Pagando ...')
             sleep(1.2)
             print('Pagamento concluída com sucesso!')
-            print(f'Total pago: R$\033[1;32m{valorConta:.2f}\033[0;0m!')
-            print(f"Seu saldo atual é de R$\033[1;32m{users.user1['saldo1']:.2f}\033[0;0m!")
+            print(f'Total pago: R${valorConta:.2f}!')
+            print(f"Seu saldo atual é de R${users.user2['saldo2']:.2f}!")
