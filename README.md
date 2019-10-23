@@ -3,6 +3,8 @@
 **************************************
 Requisitos
 **************************************
+
+```
 - Criar duas contas. conta 1 e conta 2
 
 - Vai logar com a conta 1
@@ -12,6 +14,8 @@ Requisitos
     * Listar clientes
     * Acessar conta -> Loga com conta 1 ou conta 2
     * Sair - Fecha a aplicação
+```
+
 
 **************************************
 AÇÕES
